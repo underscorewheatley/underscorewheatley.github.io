@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #d3d3d3;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: inherit;
+            line-height: 1;
+        }
+
+        .back-arrow:hover {
+            opacity: 0.7;
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .page-title {
+            font-family: "Franklin Gothic Medium", "Franklin Gothic Demi", "Arial Narrow", sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2.5rem;
+        }
+
+        .driver-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .driver-links a {
+            color: inherit;
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+
+        .driver-links a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow" aria-label="Back to home">&larr;</a>
+    <main>
+        <h1 class="page-title">Drivers</h1>
+        <div class="driver-links">
+            <a href="#" onclick="handleDriverClick('This Driver.txt'); return false;">This Driver</a>
+            <a href="#" onclick="handleDriverClick('That Driver.txt'); return false;">That Driver</a>
+        </div>
+    </main>
+
+    <script>
+        function handleDriverClick(filename) {
+            var a = document.createElement('a');
+            a.href = 'data:text/plain,';
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.location.href = 'c-you-later.html';
+        }
+    </script>
+</body>
+</html>
