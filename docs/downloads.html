@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before You Go</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #d3d3d3;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: inherit;
+            line-height: 1;
+            animation: float 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .back-arrow span {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            display: inline-block;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 6rem;
+        }
+
+        .page-title {
+            font-family: "Franklin Gothic Medium", "Franklin Gothic Demi", "Arial Narrow", sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2.5rem;
+        }
+
+        .boxes-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .box {
+            background-color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            color: inherit;
+            cursor: pointer;
+            transition: background-color 1s, color 1s;
+        }
+
+        .box.active {
+            background-color: black;
+            color: white;
+        }
+
+        .box:hover {
+            background-color: #e0e0e0;
+            color: inherit;
+        }
+
+        .box.active:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .box-content {
+            display: none;
+            margin-top: 1rem;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .box-content.active {
+            display: block;
+        }
+
+        .release-info {
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+            padding: 1rem 0;
+            margin-top: 0.5rem;
+        }
+
+        .release-info a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .release-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .release-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .release-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow">👈<span>got lost?</span></a>
+    <main>
+        <div class="boxes-row">
+            <span class="box" onclick="toggleContent(this, 'apps')">@apps</span>
+            <span class="box" onclick="toggleContent(this, 'drivers4os')">@drivers4os</span>
+        </div>
+        <div id="apps-content" class="box-content">
+            <div class="release-info">
+                <a href="article.html">
+                    <div class="release-title">XDA Co-App Pre-Alpha Release</div>
+                    <div class="release-subtitle">Unofficial</div>
+                    <div class="release-date">March 6, 2026</div>
+                </a>
+            </div>
+        </div>
+        <div id="drivers4os-content" class="box-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </main>
+
+    <script>
+        var activeBox = null;
+
+        function toggleContent(element, id) {
+            if (activeBox === id) {
+                return;
+            }
+            
+            document.querySelectorAll('.box').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.box-content').forEach(function(c) {
+                c.classList.remove('active');
+            });
+            
+            element.classList.add('active');
+            document.getElementById(id + '-content').classList.add('active');
+            activeBox = id;
+        }
+    </script>
+</body>
+</html>

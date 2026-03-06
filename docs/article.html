@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XDA Forums Pre-Alpha App Download Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #d3d3d3;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 600px;
+            text-align: center;
+            font-family: Fixedsys, monospace;
+            font-weight: bold;
+            font-stretch: condensed;
+            letter-spacing: -0.02em;
+            transform: scaleX(0.92);
+            font-size: 2rem;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid black;
+            animation: typing 1.5s steps(11) forwards, blink 0.5s step-end infinite;
+            width: 0;
+            user-select: none;
+            text-decoration: none;
+            color: black;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 9ch; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            min-height: 100vh;
+            padding: 2.5rem 2rem;
+        }
+
+        .article-content {
+            font-family: Arial, sans-serif;
+            font-size: 1.1rem;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.6;
+            font-weight: bold;
+            background-color: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+        }
+
+        .download-box {
+            background-color: white;
+            color: black;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .download-box:hover {
+            opacity: 0.8;
+        }
+
+        .download-title {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .download-version {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-top: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a href="index.html" class="logo">_Wheatley</a>
+        <p class="article-content">Hello! Passing through, this is just a quick article showcasing the pre-alpha version of an unofficial XDA Forums app I'm working on that I'll freely provide to the community. The app has a very basic functionality, where it simply opens to the actual website itself and nothing else. As I add more updates, I'll make threads on the forum site with archives under this page showing past and new updates to what's going on. I would share a GitHub but, I want to save more repositories for more important things. Also, this page is only accessible via the forums for now, I made it that way to avoid people from seeing the main website which is yet to be revealed and is a little bit incomplete at the moment. The button below, once clicked, downloads the APK onto your smartphone! Also, Google might be shutting down this freely downloadable APK adjustment to their next range of devices after September of this year, so I'll try to see if I can launch some version of this app onto the store if I'm allowed to.</p>
+        <a href="xda-forumsPA-1.0.apk" download class="download-box">
+            <span class="download-title">XDA Forums Pre-Alpha</span>
+            <span class="download-version">1.0</span>
+        </a>
+    </main>
+</body>
+</html>
