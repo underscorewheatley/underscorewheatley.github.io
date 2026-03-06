@@ -63,6 +63,7 @@
         .boxes-row {
             display: flex;
             gap: 1rem;
+            justify-content: center;
         }
 
         .box {
@@ -73,6 +74,33 @@
             color: inherit;
             cursor: pointer;
             transition: background-color 1s, color 1s;
+        }
+
+        .driver-box {
+            color: white;
+            text-align: center;
+            min-width: 260px;
+            padding: 2rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .driver-box-red {
+            background-color: #c0392b;
+        }
+
+        .driver-box-green {
+            background-color: #27ae60;
+        }
+
+        .driver-box-purple {
+            background-color: #8e44ad;
+        }
+
+        .driver-box-orange {
+            background-color: #e67e22;
         }
 
         .box.active {
@@ -149,7 +177,14 @@
             </div>
         </div>
         <div id="drivers4os-content" class="box-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="boxes-row">
+                <a href="windows-7-patch-drivers.html" class="box driver-box driver-box-red">Windows 7 Patch Drivers</a>
+                <a href="windows-10-patch-drivers.html" class="box driver-box driver-box-green">Windows 10 Patch Drivers</a>
+            </div>
+            <div class="boxes-row" style="margin-top: 0.75rem;">
+                <a href="windows-xp-patch-drivers.html" class="box driver-box driver-box-purple">Windows XP Patch Drivers</a>
+                <a href="windows-4-1-patch-drivers.html" class="box driver-box driver-box-orange">Windows 4.1 Patch Drivers</a>
+            </div>
         </div>
     </main>
 
